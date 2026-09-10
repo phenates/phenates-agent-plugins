@@ -1,5 +1,6 @@
 ---
 name: markdown-flavor
+version: 1.0.0
 description: Write and edit Markdown following house conventions plus Obsidian Flavored Markdown syntax (wikilinks, embeds, callouts, properties). Use for any Markdown file the agent writes or edits, inside an Obsidian vault or not.
 ---
 
