@@ -17,10 +17,11 @@ These rules apply to every Markdown file, regardless of syntax dialect below:
 - **No horizontal rule in the body.** `---` is reserved for the frontmatter delimiters only -- don't use it to separate sections in the body.
 - **Fenced code blocks for multi-line code**, always with a language tag for syntax highlighting. Comment in English inside the code, even when the surrounding document is in French.
 - **Inline code (backticks) for file names, file paths, commands, and variable names** -- e.g. `server.js`, `/etc/nginx/nginx.conf`, `npm install`, `maxConnections`.
+- **Frontmatter fields**: use `title`, `aliases`, `created`, `tags` only. Don't add `modified`, `date`, `status`, or other properties unless the user explicitly asks for them.
 
 ## Workflow: Creating a Note
 
-1. **Add frontmatter** with properties (title, tags, aliases) at the top of the file. See [PROPERTIES.md](references/PROPERTIES.md) for all property types.
+1. **Add frontmatter** with `title`, `aliases`, `created`, `tags` at the top of the file -- see House Conventions above. See [PROPERTIES.md](references/PROPERTIES.md) for property syntax.
 2. **Write content** using standard Markdown for structure, plus Obsidian-specific syntax below.
 3. **Link related notes** using wikilinks (`[[Note]]`) for internal vault connections, or standard Markdown links for external URLs.
 4. **Embed content** from other notes, images, or PDFs using the `![[embed]]` syntax. See [EMBEDS.md](references/EMBEDS.md) for all embed types.
@@ -170,11 +171,12 @@ Inline footnote.^[This is inline.]
 ````markdown
 ---
 title: Project Alpha
-date: 2024-01-15
+aliases:
+  - Alpha
+created: 2024-01-15
 tags:
   - project
   - active
-status: in-progress
 ---
 
 This project aims to [[improve workflow]] using modern techniques.
