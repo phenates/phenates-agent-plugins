@@ -1,0 +1,8 @@
+{
+  "name": "phenates-skills",
+  "description": "Personal Agent Skills collection: Obsidian vault access, Markdown conventions, JSON Canvas, Bases.",
+  "version": "1.0.0",
+  "author": {
+    "name": "phenates"
+  }
+}
