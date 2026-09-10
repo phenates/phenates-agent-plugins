@@ -2,6 +2,7 @@
 name: obsidian-vault
 version: 1.0.0
 description: "Access and write to the Obsidian vault via MCP: tool mechanics, default save folder, vault organization, and plugin-specific behavior. Use when reading, searching, creating, or editing notes in the Obsidian vault, or when the user asks about vault structure, folders, or vault plugins."
+author: phenates
 ---
 
 # Obsidian Vault via MCP
