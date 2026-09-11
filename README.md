@@ -115,13 +115,38 @@ https://github.com/phenates/phenates-agent-plugin
 
 ## Development
 
-### Validation
+### Validation Workflow
 
-Validate the package structure with the Agent Plugins Builder:
+A multi-level validation pipeline ensures both **Agent Plugins 1.0.0** (portable) and **Claude Code native** manifests remain compliant at all stages.
+
+#### Level 1 — Local validation (on-demand)
+
+Run all validators in one command:
 
 ```bash
-npx @hiai-gg/agent-plugins-builder inspect . --json
+./scripts/validate.sh
 ```
+
+Validates:
+- **Agent Plugins 1.0.0** — Schema compliance via `@hiai-gg/agent-plugins-doctor check`
+- **Agent Plugins structure** — Plugin integrity and skills detection via `@hiai-gg/agent-plugins-builder inspect`
+- **Claude Code native** — Marketplace manifest and plugin structure via `claude plugin validate --strict`
+
+Exit code `0` = all pass; non-zero = at least one failed.
+
+#### Level 2 — Pre-commit hook (automatic)
+
+**Setup** (one-time, after clone):
+
+```bash
+./scripts/install-hooks.sh
+```
+
+Then `./scripts/validate.sh` runs automatically before each `git commit`. Commit is blocked if validation fails (bypass with `git commit --no-verify`, but not recommended).
+
+#### Level 4 — GitHub Actions (on push/PR)
+
+Runs the same validators on GitHub after each push and pull request to `main`, providing a final safety net. (Setup required separately in `.github/workflows/`.)
 
 ### Versioning
 
