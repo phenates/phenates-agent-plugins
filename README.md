@@ -128,6 +128,7 @@ Run all validators in one command:
 ```
 
 Validates:
+
 - **Agent Plugins 1.0.0** — Schema compliance via `@hiai-gg/agent-plugins-doctor check`
 - **Agent Plugins structure** — Plugin integrity and skills detection via `@hiai-gg/agent-plugins-builder inspect`
 - **Claude Code native** — Marketplace manifest and plugin structure via `claude plugin validate --strict`
@@ -160,8 +161,41 @@ Runs the same validators on GitHub after each push and pull request to `main`, p
 
 ### Versioning
 
-- **maintained skills** (`markdown-flavor`, `obsidian-vault`): v0.1.0 (pre-release)
-- **vendored skills** (`json-canvas`, `obsidian-bases`, `obsidian-cli`): version pinned; no modifications
+This repository follows a two-level versioning policy, each level independent of the other.
+
+#### Skill versions
+
+Each skill has its own SemVer version number (`version: X.Y.Z`) in its frontmatter.
+
+- **MAJOR** — breaking change in the skill's frontmatter or behavior
+- **MINOR** — new feature added to the skill
+- **PATCH** — bug fix, rewording, no behavior change
+
+#### Plugin version
+
+The plugin as a whole has a single version in `.claude-plugin/plugin.json`, read identically by every platform that consumes this manifest.
+
+Bumping this version is **not automatic**: it's decided case by case, when a set of changes deserves to be seen as a new release of the package — not on every individual skill bump.
+
+- **MAJOR** — breaking change to the bundle structure (modified `mcp.json` schema, renamed/removed skill, folder reorganization)
+- **MINOR** — new skill/agent/command added to the bundle, or an existing skill receives a MINOR/MAJOR bump
+- **PATCH** — internal fix within a skill that only warrants a patch, metadata, documentation
+
+#### Git tags
+
+A `vX.Y.Z` tag is created only for plugin releases (a `plugin.json` bump) — not on every individual skill bump.
+
+#### Changelog
+
+All changes are tracked in a single [`CHANGELOG.md`](./CHANGELOG.md) at the repo root (following [Keep a Changelog](https://keepachangelog.com/)), with one entry per plugin version detailing which skills were touched and their new version.
+
+#### Platform distribution
+
+| Platform           | Behavior                                                     |
+| ------------------ | ------------------------------------------------------------ |
+| Claude Desktop     | Follows GitHub updates automatically via the plugin manifest |
+| Hermes (`tap add`) | Reads each skill's version individually                      |
+| npx skills         | Follows the repo's HEAD continuously, no pinned version      |
 
 ## License
 
