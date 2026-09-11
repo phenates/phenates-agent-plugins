@@ -139,10 +139,20 @@ Exit code `0` = all pass; non-zero = at least one failed.
 **Setup** (one-time, after clone):
 
 ```bash
-./scripts/install-hooks.sh
+bash -c '
+cat > .git/hooks/pre-commit << '"'"'EOF'"'"'
+#!/usr/bin/env bash
+"$(cd "$(dirname "$0")/../.." && pwd)"/scripts/validate.sh
+EOF
+chmod +x .git/hooks/pre-commit
+'
 ```
 
+Or create `.git/hooks/pre-commit` manually pointing to `./scripts/validate.sh`.
+
 Then `./scripts/validate.sh` runs automatically before each `git commit`. Commit is blocked if validation fails (bypass with `git commit --no-verify`, but not recommended).
+
+**Note:** `.git/hooks/` is not version-controlled by Git, so each clone must install the hook independently. Contributors see setup instructions in this README.
 
 #### Level 4 — GitHub Actions (on push/PR)
 
