@@ -9,7 +9,7 @@
     {
       "name": "phenates-agent-plugin",
       "source": "./",
-      "description": "Obsidian vault access, Markdown conventions, JSON Canvas, and Bases skills.",
+      "description": "Personal Agent Plugin: Reusable portable Agent Plugins 1.0.0 package containing skills, agents, commands, and MCP configurations for multi-platform deployment across Claude Code, Claude Desktop, Hermes Agent, and other compatible agent frameworks.",
       "category": "productivity",
       "author": {
         "name": "phenates"
