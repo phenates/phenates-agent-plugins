@@ -1,4 +1,4 @@
-# phenates-agent-plugin
+# phenates-agent-plugins
 
 **Personal Agent Plugin.** A reusable portable Agent Plugins 1.0.0 package containing skills, agents, commands, and MCP configurations for multi-platform deployment across Claude Code, Claude Desktop, Hermes Agent, and other compatible agent frameworks.
 
@@ -14,7 +14,7 @@ This package consolidates:
 ## Directory Structure
 
 ```
-phenates-agent-plugin/
+phenates-agent-plugins/
 ├── skills/
 │   ├── markdown-flavor/        # House Markdown conventions + OFM syntax
 │   ├── obsidian-vault/         # Obsidian vault access via MCP
@@ -38,10 +38,10 @@ phenates-agent-plugin/
 
 | Platform                      | Mechanism             | Install                                                                                                                | Update                          | Remove                       | Status                   |
 | ----------------------------- | --------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------- | ---------------------------- | ------------------------ |
-| **Claude Code**               | Marketplace           | `/plugin marketplace add phenates-agent-plugin`                                                                        | `/plugin marketplace update`    | `/plugin marketplace remove` | ✅ Tested                |
+| **Claude Code**               | Marketplace           | `/plugin marketplace add phenates-agent-plugins`                                                                        | `/plugin marketplace update`    | `/plugin marketplace remove` | ✅ Tested                |
 | **Claude Desktop (Cowork)**   | Marketplace UI        | Add via Settings → Plugins → Marketplace                                                                               | Auto-update                     | Auto-remove                  | ✅ Tested                |
-| **Hermes Agent**              | Native tap + portable | `hermes skills tap add phenates/phenates-agent-plugin` (native) or `hermes plugins install ... --no-enable` (portable) | `tap update` or manual override | `tap remove` or manual       | 🔶 Portable format ready |
-| **npx skills (Vercel)**       | CLI                   | `npx skills add phenates/phenates-agent-plugin`                                                                        | `npx skills update`             | `npx skills remove`          | ✅ Ready                 |
+| **Hermes Agent**              | Native tap + portable | `hermes skills tap add phenates/phenates-agent-plugins` (native) or `hermes plugins install ... --no-enable` (portable) | `tap update` or manual override | `tap remove` or manual       | 🔶 Portable format ready |
+| **npx skills (Vercel)**       | CLI                   | `npx skills add phenates/phenates-agent-plugins`                                                                        | `npx skills update`             | `npx skills remove`          | ✅ Ready                 |
 | **Generic Agent Plugins 1.0** | Direct reference      | Point client to this repository                                                                                        | Fetch latest on startup         | N/A                          | ✅ Compliant             |
 
 ## Installation by Platform
@@ -51,7 +51,7 @@ phenates-agent-plugin/
 Add from the marketplace:
 
 ```bash
-/plugin marketplace add phenates-agent-plugin
+/plugin marketplace add phenates-agent-plugins
 ```
 
 List installed plugins:
@@ -69,7 +69,7 @@ Or discover in the plugin browser:
 ### Claude Desktop (Cowork)
 
 1. Go to **Settings → Plugins → Marketplace**
-2. Search for `phenates-agent-plugin`
+2. Search for `phenates-agent-plugins`
 3. Click **Add**
 
 Updates sync automatically.
@@ -79,20 +79,20 @@ Updates sync automatically.
 **Native tap (current):**
 
 ```bash
-hermes skills tap add phenates/phenates-agent-plugin
+hermes skills tap add phenates/phenates-agent-plugins
 hermes skills check
 ```
 
 **Portable format (future):**
 
 ```bash
-hermes plugins install https://github.com/phenates/phenates-agent-plugin --no-enable
+hermes plugins install https://github.com/phenates/phenates-agent-plugins --no-enable
 ```
 
 ### npx skills
 
 ```bash
-npx skills add phenates/phenates-agent-plugin --list
+npx skills add phenates/phenates-agent-plugins --list
 ```
 
 ### Generic Agent Plugins 1.0 Client
@@ -100,7 +100,7 @@ npx skills add phenates/phenates-agent-plugin --list
 Point your client to this repository (branch: `main`):
 
 ```
-https://github.com/phenates/phenates-agent-plugin
+https://github.com/phenates/phenates-agent-plugins
 ```
 
 ## Skills Included
