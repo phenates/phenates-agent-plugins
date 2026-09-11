@@ -1,0 +1,9 @@
+{
+  "name": "phenates-agent-plugin",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Portable Agent Skills, MCP, and plugin ecosystem: Obsidian vault access, Markdown conventions, JSON Canvas, and Bases.",
+  "author": "phenates",
+  "skills": "skills/",
+  "mcp": "mcp.json"
+}
