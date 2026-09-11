@@ -2,7 +2,7 @@
   "name": "phenates-agent-plugin",
   "version": "0.1.0",
   "license": "MIT",
-  "description": "Portable Agent Skills, MCP, and plugin ecosystem: Obsidian vault access, Markdown conventions, JSON Canvas, and Bases.",
+  "description": "Personal Agent Plugin: Reusable portable Agent Plugins 1.0.0 package containing skills, agents, commands, and MCP configurations for multi-platform deployment across Claude Code, Claude Desktop, Hermes Agent, and other compatible agent frameworks.",
   "author": "phenates",
   "skills": "skills/",
   "mcp": "mcp.json"

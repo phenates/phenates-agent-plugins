@@ -1,6 +1,6 @@
 # phenates-agent-plugin
 
-**Portable Agent Skills, MCP, and plugin ecosystem.** A reusable Agent Plugins 1.0.0 package containing skills, agents, commands, and MCP configurations for multi-platform deployment across Claude Code, Claude Desktop, Hermes Agent, and other compatible agent frameworks.
+**Personal Agent Plugin.** A reusable portable Agent Plugins 1.0.0 package containing skills, agents, commands, and MCP configurations for multi-platform deployment across Claude Code, Claude Desktop, Hermes Agent, and other compatible agent frameworks.
 
 ## Overview
 
@@ -36,13 +36,13 @@ phenates-agent-plugin/
 
 ## Platform Compatibility
 
-| Platform | Mechanism | Install | Update | Remove | Status |
-|----------|-----------|---------|--------|--------|--------|
-| **Claude Code** | Marketplace | `/plugin marketplace add phenates-agent-plugin` | `/plugin marketplace update` | `/plugin marketplace remove` | ✅ Tested |
-| **Claude Desktop (Cowork)** | Marketplace UI | Add via Settings → Plugins → Marketplace | Auto-update | Auto-remove | ✅ Tested |
-| **Hermes Agent** | Native tap + portable | `hermes skills tap add phenates/phenates-agent-plugin` (native) or `hermes plugins install ... --no-enable` (portable) | `tap update` or manual override | `tap remove` or manual | 🔶 Portable format ready |
-| **npx skills (Vercel)** | CLI | `npx skills add phenates/phenates-agent-plugin` | `npx skills update` | `npx skills remove` | ✅ Ready |
-| **Generic Agent Plugins 1.0** | Direct reference | Point client to this repository | Fetch latest on startup | N/A | ✅ Compliant |
+| Platform                      | Mechanism             | Install                                                                                                                | Update                          | Remove                       | Status                   |
+| ----------------------------- | --------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------- | ---------------------------- | ------------------------ |
+| **Claude Code**               | Marketplace           | `/plugin marketplace add phenates-agent-plugin`                                                                        | `/plugin marketplace update`    | `/plugin marketplace remove` | ✅ Tested                |
+| **Claude Desktop (Cowork)**   | Marketplace UI        | Add via Settings → Plugins → Marketplace                                                                               | Auto-update                     | Auto-remove                  | ✅ Tested                |
+| **Hermes Agent**              | Native tap + portable | `hermes skills tap add phenates/phenates-agent-plugin` (native) or `hermes plugins install ... --no-enable` (portable) | `tap update` or manual override | `tap remove` or manual       | 🔶 Portable format ready |
+| **npx skills (Vercel)**       | CLI                   | `npx skills add phenates/phenates-agent-plugin`                                                                        | `npx skills update`             | `npx skills remove`          | ✅ Ready                 |
+| **Generic Agent Plugins 1.0** | Direct reference      | Point client to this repository                                                                                        | Fetch latest on startup         | N/A                          | ✅ Compliant             |
 
 ## Installation by Platform
 
@@ -105,13 +105,13 @@ https://github.com/phenates/phenates-agent-plugin
 
 ## Skills Included
 
-| Skill | Description | Status | Version |
-|---|---|---|---|
-| [`markdown-flavor`](skills/markdown-flavor) | House Markdown conventions plus Obsidian Flavored Markdown syntax (wikilinks, embeds, callouts, properties). Applies to any Markdown file, not just Obsidian notes. | Actively maintained | v0.1.0 |
-| [`obsidian-vault`](skills/obsidian-vault) | Access and write to an Obsidian vault via MCP: tool mechanics, default save folder, vault organization, plugin-specific behavior. | Actively maintained | v0.1.0 |
-| [`json-canvas`](skills/json-canvas) | Create and edit JSON Canvas (`.canvas`) files. | Vendored from Kepano, unmodified | — |
-| [`obsidian-bases`](skills/obsidian-bases) | Create and edit Obsidian Bases (`.base`) files. | Vendored from Kepano, unmodified | — |
-| [`obsidian-cli`](skills/obsidian-cli) | Obsidian CLI interaction. | Vendored from Kepano, not adopted (redundant with the Local REST API MCP server in use) | — |
+| Skill                                       | Description                                                                                                                                                         | Status                                                                                  | Version |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | ------- |
+| [`markdown-flavor`](skills/markdown-flavor) | House Markdown conventions plus Obsidian Flavored Markdown syntax (wikilinks, embeds, callouts, properties). Applies to any Markdown file, not just Obsidian notes. | Actively maintained                                                                     | v0.1.0  |
+| [`obsidian-vault`](skills/obsidian-vault)   | Access and write to an Obsidian vault via MCP: tool mechanics, default save folder, vault organization, plugin-specific behavior.                                   | Actively maintained                                                                     | v0.1.0  |
+| [`json-canvas`](skills/json-canvas)         | Create and edit JSON Canvas (`.canvas`) files.                                                                                                                      | Vendored from Kepano, unmodified                                                        | —       |
+| [`obsidian-bases`](skills/obsidian-bases)   | Create and edit Obsidian Bases (`.base`) files.                                                                                                                     | Vendored from Kepano, unmodified                                                        | —       |
+| [`obsidian-cli`](skills/obsidian-cli)       | Obsidian CLI interaction.                                                                                                                                           | Vendored from Kepano, not adopted (redundant with the Local REST API MCP server in use) | —       |
 
 ## Development
 
